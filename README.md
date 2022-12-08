@@ -1,5 +1,5 @@
 # Pokedex
-### Projeto desenvolvido no Bootcamp Orange Tech+
+#### Projeto desenvolvido no Bootcamp Orange Tech+
 ## Interface inspirada em um projeto do dribbble, link abaixo:<br>
 <a href="https://dribbble.com/shots/6540871-Pokedex-App">https://dribbble.com/shots/6540871-Pokedex-App</a>
 <br><br>
