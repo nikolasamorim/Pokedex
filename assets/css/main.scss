@@ -1,0 +1,750 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,700&display=swap");
+
+* {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* BARRA DE NAVEGAÇÃO */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: #fff
+}
+
+::-webkit-scrollbar-thumb {
+    align-items: left;
+    width: 6px;
+    border-radius: 10px;
+    background-color: #1D2731
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #1d2731e0
+}
+
+/*END BARRA DE NAVEGAÇÃO*/
+
+.content {
+    position: relative;
+
+    padding: 1rem;
+
+    overflow: hidden;
+
+    & .menu {
+        position: relative;
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        padding: 2rem 0 .5rem 0;
+
+        font-size: 1.5rem;
+        color: #1D2731;
+    }
+
+    & .grey-ball {
+        position: absolute;
+        bottom: -4.1rem;
+        right: -5.3rem;
+        z-index: 0;
+
+        transform: scale(2);
+
+        opacity: .2;
+        filter: brightness(.85);
+    }
+
+    & h1 {
+        margin: 1rem 0;
+
+        color: #1D2731;
+
+        font-weight: 700;
+    }
+}
+
+ol.pokemons {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    & li.grass,
+    .fire,
+    .water,
+    .electric,
+    .ground,
+    .bug,
+    .normal,
+    .fighting,
+    .ice,
+    .psychic,
+    .poison,
+    .flying,
+    .fairy,
+    .dragon,
+    .dark,
+    .ghost,
+    .steel,
+    .rock {
+        position: relative;
+
+        margin: .5rem;
+        padding: 2rem 1rem;
+
+        border-radius: 1rem;
+        height: 100px;
+
+        cursor: pointer;
+
+        color: #fff;
+        font-weight: 500;
+        font-size: 1.05rem;
+        text-transform: capitalize;
+
+        overflow: hidden;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+
+            width: 2.8rem;
+            height: 0.7rem;
+
+            background-color: #7e7e7e;
+
+            opacity: .15;
+        }
+
+        & img {
+            position: absolute;
+            bottom: .5rem;
+            right: .5rem;
+            z-index: 1;
+
+            max-width: 100%;
+            height: 110px;
+
+            filter: saturate(1.7);
+
+            &.grey-ball {
+                bottom: -.5rem;
+                right: -.5rem;
+                z-index: 0;
+
+                transform: scale(1.2);
+
+                opacity: .18;
+            }
+        }
+
+        &.normal {
+            background-color: #a6a877;
+        }
+
+        &.grass {
+            background-image: linear-gradient(to right bottom, #53e0be, #51ddbb, #50dab8, #4ed7b6, #4cd4b3, #49d0af, #46cbac, #43c7a8, #3fc1a2, #3bba9c, #36b497, #32ae91);
+        }
+
+        &.fire {
+            background-image: linear-gradient(to right bottom, #ff898a, #ff8485, #fe7e7f, #fe797a, #fd7374, #f86e6f, #f36869, #ee6364, #e45c5d, #da5556, #d04f50, #c64849);
+        }
+
+        &.water {
+            background-image: linear-gradient(to right bottom, #90c9fb, #8bc7fc, #87c5fc, #82c3fd, #7dc1fd, #79befb, #74bbfa, #70b8f8, #6bb3f4, #66aeef, #61aaeb, #5ca5e7);
+        }
+
+        &.electric {
+            background-image: linear-gradient(to right bottom, #ffe298, #ffe090, #ffde89, #ffdc81, #ffda79, #fdd773, #fcd56e, #fad268, #f6ce63, #f3ca5e, #efc659, #ecc254);
+        }
+
+        &.ground {
+            background-image: linear-gradient(to right bottom, #b79693, #b68f8c, #b58985, #b4827d, #b37c76, #af7771, #ac726c, #a86d67, #a16862, #9b635d, #945f59, #8e5a54);
+        }
+
+        &.ice {
+            background-color: #98d5d7;
+        }
+
+        &.flying {
+            background-color: #a98ff0;
+        }
+
+        &.poison {
+            background-color: #a040a0;
+        }
+
+        &.fighting {
+            background-color: #bf3029;
+        }
+
+        &.psychic {
+            background-color: #f65687;
+        }
+
+        &.dark {
+            background-color: #725847;
+        }
+
+        &.rock {
+            background-color: #b8a137;
+        }
+
+        &.bug {
+            background-color: #a8b720;
+        }
+
+        &.ghost {
+            background-color: #6e5896;
+        }
+
+        &.steel {
+            background-color: #b9b7cf;
+        }
+
+        &.dragon {
+            background-color: #6f38f6;
+        }
+
+        &.fairy {
+            background-color: #f9aec7;
+        }
+    }
+}
+
+.types {
+    position: absolute;
+
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    & .type {
+        position: relative;
+
+        border-radius: 2rem;
+
+        padding: .5rem .7rem;
+        margin: .4rem 0;
+
+        background-color: rgba(255, 255, 255, 0.253);
+        color: #fff;
+
+        text-transform: capitalize;
+        text-align: center;
+        font-size: .7rem;
+        letter-spacing: .07rem;
+
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba(201, 201, 201, 0.452);
+        }
+    }
+}
+
+.pagination {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2rem;
+
+}
+
+
+
+/* MODAL HERE */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+
+}
+
+.modal-content {
+    margin: 3% auto;
+    border: 1px solid #888;
+    width: 70%;
+
+    text-transform: capitalize;
+    border-radius: 1rem;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-size: 70%;
+    background-position: 110% 150px;
+
+    &.normal {
+        background-color: #a6a877;
+    }
+
+    &.grass {
+        background-color: #53e0be;
+    }
+
+    &.fire {
+        background-color: #ff898a;
+    }
+
+    &.water {
+        background-color: #90c9fb;
+    }
+
+    &.electric {
+        background-color: #ffe298;
+    }
+
+    &.ground {
+        background-color: #b79693;
+    }
+
+    &.ice {
+        background-color: #98d5d7;
+    }
+
+    &.flying {
+        background-color: #a98ff0;
+    }
+
+    &.poison {
+        background-color: #a040a0;
+    }
+
+    &.fighting {
+        background-color: #bf3029;
+    }
+
+    &.psychic {
+        background-color: #f65687;
+    }
+
+    &.dark {
+        background-color: #725847;
+    }
+
+    &.rock {
+        background-color: #b8a137;
+    }
+
+    &.bug {
+        background-color: #a8b720;
+    }
+
+    &.ghost {
+        background-color: #6e5896;
+    }
+
+    &.steel {
+        background-color: #b9b7cf;
+    }
+
+    &.dragon {
+        background-color: #6f38f6;
+    }
+
+    &.fairy {
+        background-color: #f9aec7;
+    }
+}
+
+.close {
+    color: white;
+    font-size: 36px;
+    font-weight: 900;
+    padding: 1rem;
+}
+
+.close:hover,
+.close:focus {
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.headerPokemon {
+    padding: 1rem;
+}
+
+.headerPokemon .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.5rem;
+}
+
+.headerPokemon .title .number {
+    font-size: 1rem;
+}
+
+.modal-content .types {
+    display: flex;
+}
+
+.modal-content .types .type {
+    font-size: 1rem;
+}
+
+.imgPokemon {
+    margin-left: 25%;
+    margin-bottom: -10%;
+    width: 50%;
+}
+
+.tabsInfo {
+    padding: 30px 20px;
+    background-color: white;
+    border-radius: 1rem;
+}
+
+.tab {
+    overflow: hidden;
+    font-size: .9rem;
+    margin-top: 25px;
+}
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    transition: 0.3s;
+    margin: 0 5px;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active {
+    background-color: white;
+    border-bottom: 2px solid #6c79db;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+}
+
+.table {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    list-style: none;
+    padding: 0;
+    font-size: .825rem;
+    text-transform: capitalize;
+}
+
+.tableMoves {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    list-style: none;
+
+    font-size: .9rem;
+    text-transform: capitalize;
+    padding: 0;
+}
+
+.tableMoves .type {
+    padding: 5px;
+}
+
+.table li {
+    padding: .3rem;
+
+}
+
+.tableValue {
+    text-align: right;
+}
+
+.tableHeader {
+    color: #ccc;
+
+}
+
+.stats {
+    width: 80%;
+    margin-left: 15px;
+}
+
+
+
+
+@media screen and (min-width: 980px) {
+    .modal-content {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .modal-content {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .modal-content {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .table {
+        grid-template-columns: 1fr;
+        align-items: center;
+    }
+
+    .tableMoves {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+
+    .table li {
+        padding: .2rem;
+    }
+
+    .tabsInfo {
+        text-align: center;
+    }
+
+    .tab {
+        margin-top: 1rem;
+    }
+
+    .tab button {
+        padding: 0;
+    }
+}
+
+/* MODAL HERE */
+
+
+
+@media (min-width: 420px) {
+    ol.pokemons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 780px) {
+    ol.pokemons {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* Button LOAD */
+
+@keyframes loading {
+    0% {
+        cy: 10;
+    }
+
+    25% {
+        cy: 3;
+    }
+
+    50% {
+        cy: 10;
+    }
+}
+
+
+canvas {
+    height: 100vh;
+    pointer-events: none;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+
+.celebrate-button {
+    background: none;
+    border: none;
+    color: #f4f7ff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    outline: none;
+    padding: 0 10px;
+    position: relative;
+    width: 150px;
+}
+
+.celebrate-button::before {
+    background-color: #6C79DB;
+    background-size: 200% auto;
+    border-radius: 1px;
+    box-shadow: 0px 2px 5px 0px #6C79DB;
+    content: "";
+    display: block;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    transition: width 0.2s cubic-bezier(0.39, 1.86, 0.64, 1) 0.3s;
+    width: 100%;
+
+    &:hover {
+        background-position: right center;
+    }
+}
+
+.celebrate-button.ready .submitMessage svg {
+    opacity: 1;
+    top: 1px;
+    transition: top 0.4s ease 600ms, opacity 0.3s linear 600ms;
+}
+
+.celebrate-button.ready .submitMessage .button-text span {
+    top: 0;
+    opacity: 1;
+    transition: all 0.2s ease calc(var(--dr) + 600ms);
+}
+
+.celebrate-button.loading::before {
+    transition: width 0.3s ease;
+    width: 80%;
+}
+
+.celebrate-button.loading .loadingMessage {
+    opacity: 1;
+}
+
+.celebrate-button.loading .loadingCircle {
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-name: loading;
+}
+
+.celebrate-button.complete .submitMessage svg {
+    top: -30px;
+    transition: none;
+}
+
+.celebrate-button.complete .submitMessage .button-text span {
+    top: -8px;
+    transition: none;
+}
+
+.celebrate-button.complete .loadingMessage {
+    top: 80px;
+}
+
+.celebrate-button.complete .successMessage .button-text span {
+    left: 0;
+    opacity: 1;
+    transition: all 0.2s ease calc(var(--d) + 1000ms);
+}
+
+.celebrate-button.complete .successMessage svg {
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.3s ease-in-out 1.4s;
+}
+
+.button-text span {
+    opacity: 0;
+    position: relative;
+}
+
+.message {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.message svg {
+    display: inline-block;
+    fill: none;
+    margin-right: 5px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+}
+
+.submitMessage .button-text span {
+    top: 8px;
+    transition: all 0.2s ease var(--d);
+}
+
+.submitMessage svg {
+    color: #fff;
+    margin-left: -1px;
+    opacity: 0;
+    position: relative;
+    top: 30px;
+    transition: top 0.4s ease, opacity 0.3s linear;
+    width: 14px;
+}
+
+.loadingMessage {
+    opacity: 0;
+    transition: opacity 0.3s linear 0.3s,
+        top 0.4s cubic-bezier(0.22, 0, 0.41, -0.57);
+}
+
+.loadingMessage svg {
+    fill: #fff;
+    margin: 0;
+    width: 22px;
+}
+
+.successMessage .button-text span {
+    left: 5px;
+    transition: all 0.2s ease var(--dr);
+}
+
+.successMessage svg {
+    color: #fff;
+    stroke-dasharray: 20;
+    stroke-dashoffset: 20;
+    transition: stroke-dashoffset 0.3s ease-in-out;
+    width: 14px;
+}
+
+.loadingCircle:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.loadingCircle:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+
+/* END Button LOAD */
